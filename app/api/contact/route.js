@@ -8,6 +8,15 @@ export async function POST(request) {
   if (body.name == "" & body.email == "" & body.message == "") {
     return Response.json({ success: false, error: true, message: 'fields must not be empty' })
   }
+  if (body.name == "") {
+    return Response.json({ success: false, error: true, message: 'fields must not be empty' })
+  }
+  if (body.email == "") {
+    return Response.json({ success: false, error: true, message: 'fields must not be empty' })
+  }
+  if (body.message == "") {
+    return Response.json({ success: false, error: true, message: 'fields must not be empty' })
+  }
 
   const client = await clientPromise;
   const db = client.db("urlshortner")
